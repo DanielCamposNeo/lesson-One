@@ -21,6 +21,19 @@ print("Competidor mas Joven en recibir una medalla de Oro")
 print(medalla[medalla["Medal"]=="Gold"].min())
 print("--------------------------------------------------------")
 print("--------------------------------------------------------")
+print("El Competidor con mas medallas")
+
+nombres = datos.groupby(['Name']).size()
+cant = max(nombres)
+indice= data.loc[data[0]==cant].index
+print(nombres[indice])
+print(datos[datos["Name"]=="Robert Tait McKenzie"])
+csv = nombres[indice].to_csv('Mayor numero de apariciones', header=True, index = True)
+print(csv)
+
+
+
+
 """print(datos["Games"].unique().tolist())
 print(datos["Sex"].count())
 print(datos["Sex"].value_counts())
