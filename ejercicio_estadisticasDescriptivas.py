@@ -20,7 +20,10 @@ data.describe()
 print("La diferencia salarial es de : ", int(data["salario"].max()) - int(data["salario"].min()))
 
 
-correlacion = data.corr()
-correlacion.style.background_gradient(cmap='coolwarm')
+corr = data.corr()
+corr.style.background_gradient(cmap="coolwarm")
+
+data["Años"].plot(kind = "bar")
+
 
 #Un ejemplo de matriz de correlación es la altura y el peso de las personas

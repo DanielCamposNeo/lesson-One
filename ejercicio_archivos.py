@@ -31,7 +31,9 @@ print(datos[datos["Name"]=="Robert Tait McKenzie"])
 csv = nombres[indice].to_csv('Mayor numero de apariciones', header=True, index = True)
 print(csv)
 
-
+datos = df[["NOC","Year"]]
+datos.head(10)
+datos["NOC"].value_counts().head(10).plot(kind="bar")
 
 
 """print(datos["Games"].unique().tolist())
