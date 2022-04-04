@@ -4,8 +4,15 @@ import csv
 
 datos = pb.read_csv("athlete_events.csv", index_col=0)
 medalla = datos[datos["Medal"].notna()]
+df = pb.DataFrame(datos)
+#Ejercicio2(Paises mas medalleros)
+paises_medallas = df[['NOC','Year']]
+paises_medallas['NOC'].value_counts().head(10)
+paises_medallas['NOC'].value_counts().head(10).plot(kind="bar")
 
-print("Competidor mas veterano en recibir una medalla de oro")
+
+#Ejercicio primero
+'''print("Competidor mas veterano en recibir una medalla de oro")
 print(medalla[medalla["Medal"]=="Gold"].max())
 print("--------------------------------------------------------")
 print("--------------------------------------------------------")
@@ -33,7 +40,9 @@ print(csv)
 
 datos = df[["NOC","Year"]]
 datos.head(10)
-datos["NOC"].value_counts().head(10).plot(kind="bar")
+datos["NOC"].value_counts().head(10).plot(kind="bar")'''
+
+
 
 
 """print(datos["Games"].unique().tolist())
